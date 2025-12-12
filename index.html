@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room 32</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .description {
+            font-size: 1.1em;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .github-main {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .github-main a {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #24292e;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s;
+        }
+
+        .github-main a:hover {
+            background: #0366d6;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .clients {
+            padding: 40px;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .client-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .client-item:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .client-name {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1em;
+        }
+
+        .launch-btn {
+            background: #667eea;
+            color: white;
+        }
+
+        .launch-btn:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .github-btn {
+            background: #24292e;
+            color: white;
+        }
+
+        .github-btn:hover {
+            background: #0366d6;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(3, 102, 214, 0.4);
+        }
+
+        .section-divider {
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Room 32</h1>
+            <p class="description">
+                click launch or GitHub. if you click GitHub click the download button and upload it to the website below, click open in tab and enjoy
+            </p>
+        </div>
+
+        <div class="github-main">
+            <a href="https://github.com/The-cmd-explorer/eaglebobster/tree/main/Clients" target="_blank">📂 View on GitHub</a>
+        </div>
+
+        <div class="clients">
+            <h2 class="section-title">Hacked Clients</h2>
+            
+            <div class="client-item">
+                <span class="client-name">DragonXLite.html</span>
+                <div class="button-group">
+                    <button class="launch-btn" onclick="launchClient('Hacked/DragonXLite.html')">Launch</button>
+                    <button class="github-btn" onclick="openGithub('Hacked/DragonXLite.html')">GitHub</button>
+                </div>
+            </div>
+
+            <div class="client-item">
+                <span class="client-name">DragonX_V2_International.html</span>
+                <div class="button-group">
+                    <button class="launch-btn" onclick="launchClient('Hacked/DragonX_V2_International.html')">Launch</button>
+                    <button class="github-btn" onclick="openGithub('Hacked/DragonX_V2_International.html')">GitHub</button>
+                </div>
+            </div>
+
+            <div class="client-item">
+                <span class="client-name">DragonX.html</span>
+                <div class="button-group">
+                    <button class="launch-btn" onclick="launchClient('Hacked/DragonX.html')">Launch</button>
+                    <button class="github-btn" onclick="openGithub('Hacked/DragonX.html')">GitHub</button>
+                </div>
+            </div>
+
+            <div class="client-item">
+                <span class="client-name">Justin 1.2.4.html</span>
+                <div class="button-group">
+                    <button class="launch-btn" onclick="launchClient('Hacked/Justin 1.2.4.html')">Launch</button>
+                    <button class="github-btn" onclick="openGithub('Hacked/Justin 1.2.4.html')">GitHub</button>
+                </div>
+            </div>
+
+            <div class="client-item">
+                <span class="client-name">NitClient 2.0.html</span>
+                <div class="button-group">
+                    <button class="launch-btn" onclick="launchClient('Hacked/NitClient 2.0.html')">Launch</button>
+                    <button class="github-btn" onclick="openGithub('Hacked/NitClient 2.0.html')">GitHub</button>
+                </div>
+            </div>
+
+            <div class="client-item">
+                <span class="client-name">PremiumDragonv2.html</span>
+                <div class="button-group">
+                    <button class="launch-btn" onclick="launchClient('Hacked/PremiumDragonv2.html')">Launch</button>
+                    <button class="github-btn" onclick="openGithub('Hacked/PremiumDragonv2.html')">GitHub</button>
+                </div>
+            </div>
+
+            <div class="client-item">
+                <span class="client-name">UwUClient v1 Full.html</span>
+                <div class="button-group">
+                    <button class="launch-btn" onclick="launchClient('Hacked/UwUClient v1 Full.html')">Launch</button>
+                    <button class="github-btn" onclick="openGithub('Hacked/UwUClient v1 Full.html')">GitHub</button>
+                </div>
+            </div>
+
+            <div class="client-item">
+                <span class="client-name">dragonXv3.html</span>
+                <div class="button-group">
+                    <button class="launch-btn" onclick="launchClient('Hacked/dragonXv3.html')">Launch</button>
+                    <button class="github-btn" onclick="openGithub('Hacked/dragonXv3.html')">GitHub</button>
+                </div>
+            </div>
+
+            <div class="client-item">
+                <span class="client-name">nit-client.html</span>
+                <div class="button-group">
+                    <button class="launch-btn" onclick="launchClient('Hacked/nit-client.html')">Launch</button>
+                    <button class="github-btn" onclick="openGithub('Hacked/nit-client.html')">GitHub</button>
+                </div>
+            </div>
+
+            <div class="client-item">
+                <span class="client-name">pi-client.html</span>
+                <div class="button-group">
+                    <button class="launch-btn" onclick="launchClient('Hacked/pi-client.html')">Launch</button>
+                    <button class="github-btn" onclick="openGithub('Hacked/pi-client.html')">GitHub</button>
+                </div>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <h2 class="section-title">Legit Clients</h2>
+
+            <div class="client-item">
+                <span class="client-name">Eagler-Reborn.html</span>
+                <div class="button-group">
+                    <button class="launch-btn" onclick="launchClient('Legit/Eagler-Reborn.html')">Launch</button>
+                    <button class="github-btn" onclick="openGithub('Legit/Eagler-Reborn.html')">GitHub</button>
+                </div>
+            </div>
+
+            <div class="client-item">
+                <span class="client-name">shadowclient3.0beta.html</span>
+                <div class="button-group">
+                    <button class="launch-btn" onclick="launchClient('Legit/shadowclient3.0beta.html')">Launch</button>
+                    <button class="github-btn" onclick="openGithub('Legit/shadowclient3.0beta.html')">GitHub</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function launchClient(filepath) {
+            const blankWindow = window.open('about:blank', '_blank');
+            blankWindow.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>${filepath}</title>
+                    <style>
+                        body, html {
+                            margin: 0;
+                            padding: 0;
+                            width: 100%;
+                            height: 100%;
+                            overflow: hidden;
+                        }
+                        iframe {
+                            width: 100%;
+                            height: 100%;
+                            border: none;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <iframe src="Clients/${filepath}"></iframe>
+                </body>
+                </html>
+            `);
+            blankWindow.document.close();
+        }
+
+        function openGithub(filepath) {
+            window.open(`https://github.com/The-cmd-explorer/eaglebobster/blob/main/Clients/${filepath}`, '_blank');
+        }
+    </script>
+</body>
+</html>
