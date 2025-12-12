@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Room 32 - Study Hub</title>
+    <link rel="icon" type="image/x-icon" id="favicon" href="">
     <style>
         * {
             margin: 0;
@@ -332,15 +333,15 @@
             </div>
 
             <div class="setting-group">
-                <label class="setting-label">Logo Image</label>
+                <label class="setting-label">Favicon (browser tab icon)</label>
                 <div class="file-input-wrapper">
                     <input type="file" id="logo-input" class="file-input" accept="image/*">
                     <label for="logo-input" class="file-input-label">
-                        📁 Click to upload logo image
+                        📁 Click to upload favicon image
                     </label>
                 </div>
                 <div class="preview-image" id="logo-preview" style="display: none;">
-                    <img id="preview-img" src="" alt="Logo preview">
+                    <img id="preview-img" src="" alt="Favicon preview">
                 </div>
             </div>
 
@@ -366,10 +367,12 @@
             }
 
             if (savedLogo) {
-                const profileImg = document.querySelector('.profile-img');
-                profileImg.innerHTML = `<img src="${savedLogo}" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">`;
                 document.getElementById('preview-img').src = savedLogo;
                 document.getElementById('logo-preview').style.display = 'block';
+                
+                // Set favicon
+                const favicon = document.getElementById('favicon');
+                favicon.href = savedLogo;
             }
         }
 
@@ -399,9 +402,9 @@
                     document.getElementById('preview-img').src = dataUrl;
                     document.getElementById('logo-preview').style.display = 'block';
                     
-                    // Update main logo
-                    const profileImg = document.querySelector('.profile-img');
-                    profileImg.innerHTML = `<img src="${dataUrl}" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">`;
+                    // Update favicon
+                    const favicon = document.getElementById('favicon');
+                    favicon.href = dataUrl;
                     
                     // Save to localStorage
                     localStorage.setItem('logoImage', dataUrl);
