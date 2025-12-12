@@ -144,44 +144,44 @@
         <div class="section-title">Enhanced Options</div>
         <div class="links">
             <a href="#" class="link-button" onclick="openResource('Hacked/DragonXLite.html'); return false;">
-                Option 1
+                Dragon X Lite
             </a>
             <a href="#" class="link-button" onclick="openResource('Hacked/DragonX_V2_International.html'); return false;">
-                Option 2
+                Dragon X V2
             </a>
             <a href="#" class="link-button" onclick="openResource('Hacked/DragonX.html'); return false;">
-                Option 3
+                Dragon X
             </a>
             <a href="#" class="link-button" onclick="openResource('Hacked/Justin 1.2.4.html'); return false;">
-                Option 4
+                Justin 1.2.4
             </a>
             <a href="#" class="link-button" onclick="openResource('Hacked/NitClient 2.0.html'); return false;">
-                Option 5
+                Nit 2.0
             </a>
             <a href="#" class="link-button" onclick="openResource('Hacked/PremiumDragonv2.html'); return false;">
-                Option 6
+                Premium Dragon V2
             </a>
             <a href="#" class="link-button" onclick="openResource('Hacked/UwUClient v1 Full.html'); return false;">
-                Option 7
+                UwU V1
             </a>
             <a href="#" class="link-button" onclick="openResource('Hacked/dragonXv3.html'); return false;">
-                Option 8
+                Dragon X V3
             </a>
             <a href="#" class="link-button" onclick="openResource('Hacked/nit-client.html'); return false;">
-                Option 9
+                Nit
             </a>
             <a href="#" class="link-button" onclick="openResource('Hacked/pi-client.html'); return false;">
-                Option 10
+                Pi
             </a>
         </div>
 
         <div class="section-title">Standard Options</div>
         <div class="links">
             <a href="#" class="link-button" onclick="openResource('Legit/Eagler-Reborn.html'); return false;">
-                Option 11
+                Eagler Reborn
             </a>
             <a href="#" class="link-button" onclick="openResource('Legit/shadowclient3.0beta.html'); return false;">
-                Option 12
+                Shadow 3.0 Beta
             </a>
         </div>
 
@@ -191,6 +191,39 @@
     </div>
 
     <script>
+        // Launch in about:blank on first load
+        if (window.location.href !== 'about:blank' && !window.opener) {
+            const currentPage = window.location.href;
+            const blankWindow = window.open('about:blank', '_blank');
+            blankWindow.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Loading...</title>
+                    <style>
+                        body, html {
+                            margin: 0;
+                            padding: 0;
+                            width: 100%;
+                            height: 100%;
+                            overflow: hidden;
+                        }
+                        iframe {
+                            width: 100%;
+                            height: 100%;
+                            border: none;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <iframe src="${currentPage}"></iframe>
+                </body>
+                </html>
+            `);
+            blankWindow.document.close();
+            window.location.href = 'about:blank';
+        }
+
         function openResource(filepath) {
             const blankWindow = window.open('about:blank', '_blank');
             blankWindow.document.write(`
