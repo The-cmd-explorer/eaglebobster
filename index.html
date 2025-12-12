@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Room 32 - Resources</title>
+    <title>Room 32 - Study Hub</title>
     <style>
         * {
             margin: 0;
@@ -60,13 +60,42 @@
             margin-bottom: 20px;
         }
 
-        .section-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: #667eea;
-            margin: 25px 0 15px 0;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #e0e0e0;
+        .announcements {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .announcement {
+            padding: 15px 18px;
+            border-radius: 12px;
+            font-size: 14px;
+            line-height: 1.5;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .announcement.info {
+            background: #e3f2fd;
+            color: #1565c0;
+            border-left: 4px solid #1976d2;
+        }
+
+        .announcement.success {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border-left: 4px solid #43a047;
         }
 
         .links {
@@ -135,58 +164,62 @@
     <div class="container">
         <div class="profile">
             <div class="profile-img">32</div>
-            <h1>Room 32</h1>
-            <p class="bio">Select a resource below to access. For issues or requests, please contact support.</p>
+            <h1>Room 32 - Study Hub</h1>
+            <p class="bio">Access study materials and educational resources. For technical support or content requests, please contact the administrator.</p>
+        </div>
+
+        <div class="announcements">
+            <div class="announcement info">
+                📚 Welcome to Room 32 Study Resources
+            </div>
+            <div class="announcement success">
+                ✨ All materials updated and available
+            </div>
         </div>
 
         <a href="https://html-loader.lovable.app/" target="_blank" class="loader-link">📂 File Loader Tool</a>
 
-        <div class="section-title">Enhanced Options</div>
         <div class="links">
             <a href="#" class="link-button" onclick="openResource('Hacked/DragonXLite.html'); return false;">
-                Dragon X Lite
+                Version 2024.1
             </a>
             <a href="#" class="link-button" onclick="openResource('Hacked/DragonX_V2_International.html'); return false;">
-                Dragon X V2
+                Version 2024.2
             </a>
             <a href="#" class="link-button" onclick="openResource('Hacked/DragonX.html'); return false;">
-                Dragon X
+                Version 2023.8
             </a>
             <a href="#" class="link-button" onclick="openResource('Hacked/Justin 1.2.4.html'); return false;">
-                Justin 1.2.4
+                Version 2023.12
             </a>
             <a href="#" class="link-button" onclick="openResource('Hacked/NitClient 2.0.html'); return false;">
-                Nit 2.0
+                Version 2024.3
             </a>
             <a href="#" class="link-button" onclick="openResource('Hacked/PremiumDragonv2.html'); return false;">
-                Premium Dragon V2
+                Version 2024.4
             </a>
             <a href="#" class="link-button" onclick="openResource('Hacked/UwUClient v1 Full.html'); return false;">
-                UwU V1
+                Version 2023.10
             </a>
             <a href="#" class="link-button" onclick="openResource('Hacked/dragonXv3.html'); return false;">
-                Dragon X V3
+                Version 2024.5
             </a>
             <a href="#" class="link-button" onclick="openResource('Hacked/nit-client.html'); return false;">
-                Nit
+                Version 2023.9
             </a>
             <a href="#" class="link-button" onclick="openResource('Hacked/pi-client.html'); return false;">
-                Pi
+                Version 2023.11
             </a>
-        </div>
-
-        <div class="section-title">Standard Options</div>
-        <div class="links">
             <a href="#" class="link-button" onclick="openResource('Legit/Eagler-Reborn.html'); return false;">
-                Eagler Reborn
+                Version 2024.6
             </a>
             <a href="#" class="link-button" onclick="openResource('Legit/shadowclient3.0beta.html'); return false;">
-                Shadow 3.0 Beta
+                Version 2024.7
             </a>
         </div>
 
         <div class="footer">
-            Room 32 Resources
+            Room 32 Educational Resources
         </div>
     </div>
 
