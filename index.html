@@ -169,6 +169,106 @@
             font-size: 12px;
         }
 
+        .settings-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .settings-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .setting-group {
+            margin-bottom: 20px;
+        }
+
+        .setting-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .setting-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .setting-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-input-label {
+            display: block;
+            padding: 12px;
+            background: #f8f9ff;
+            border: 2px dashed #667eea;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .file-input-label:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .preview-image {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .preview-image img {
+            max-width: 100px;
+            max-height: 100px;
+            border-radius: 50%;
+            border: 3px solid #667eea;
+        }
+
+        .apply-button {
+            width: 100%;
+            padding: 15px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .apply-button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
         .loader-link {
             display: block;
             text-align: center;
@@ -217,9 +317,101 @@
         <div class="footer">
             Room 32 Educational Resources
         </div>
+
+        <div class="settings-section">
+            <div class="settings-title">⚙️ Customize Page</div>
+            
+            <div class="setting-group">
+                <label class="setting-label">Page Title</label>
+                <input type="text" id="title-input" class="setting-input" placeholder="Room 32 - Study Hub" value="Room 32 - Study Hub">
+            </div>
+
+            <div class="setting-group">
+                <label class="setting-label">Header Text</label>
+                <input type="text" id="header-input" class="setting-input" placeholder="Room 32 - Study Hub" value="Room 32 - Study Hub">
+            </div>
+
+            <div class="setting-group">
+                <label class="setting-label">Logo Image</label>
+                <div class="file-input-wrapper">
+                    <input type="file" id="logo-input" class="file-input" accept="image/*">
+                    <label for="logo-input" class="file-input-label">
+                        📁 Click to upload logo image
+                    </label>
+                </div>
+                <div class="preview-image" id="logo-preview" style="display: none;">
+                    <img id="preview-img" src="" alt="Logo preview">
+                </div>
+            </div>
+
+            <button class="apply-button" onclick="applySettings()">Apply Changes</button>
+        </div>
     </div>
 
     <script>
+        // Load saved settings
+        function loadSettings() {
+            const savedTitle = localStorage.getItem('pageTitle');
+            const savedHeader = localStorage.getItem('headerText');
+            const savedLogo = localStorage.getItem('logoImage');
+
+            if (savedTitle) {
+                document.title = savedTitle;
+                document.getElementById('title-input').value = savedTitle;
+            }
+
+            if (savedHeader) {
+                document.querySelector('h1').textContent = savedHeader;
+                document.getElementById('header-input').value = savedHeader;
+            }
+
+            if (savedLogo) {
+                const profileImg = document.querySelector('.profile-img');
+                profileImg.innerHTML = `<img src="${savedLogo}" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">`;
+                document.getElementById('preview-img').src = savedLogo;
+                document.getElementById('logo-preview').style.display = 'block';
+            }
+        }
+
+        // Apply settings
+        function applySettings() {
+            const title = document.getElementById('title-input').value;
+            const header = document.getElementById('header-input').value;
+
+            document.title = title;
+            document.querySelector('h1').textContent = header;
+
+            localStorage.setItem('pageTitle', title);
+            localStorage.setItem('headerText', header);
+
+            alert('Settings applied successfully!');
+        }
+
+        // Handle logo upload
+        document.getElementById('logo-input').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const dataUrl = event.target.result;
+                    
+                    // Update preview
+                    document.getElementById('preview-img').src = dataUrl;
+                    document.getElementById('logo-preview').style.display = 'block';
+                    
+                    // Update main logo
+                    const profileImg = document.querySelector('.profile-img');
+                    profileImg.innerHTML = `<img src="${dataUrl}" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">`;
+                    
+                    // Save to localStorage
+                    localStorage.setItem('logoImage', dataUrl);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Load settings on page load
+        loadSettings();
         // Define your clients here - add new ones to this array
         const clients = [
             { path: 'Hacked/DragonXLite.html' },
