@@ -354,7 +354,7 @@
         function loadSettings() {
             const savedTitle = localStorage.getItem('pageTitle');
             const savedHeader = localStorage.getItem('headerText');
-            const savedLogo = localStorage.getItem('logoImage');
+            const savedFavicon = localStorage.getItem('logoImage');
 
             if (savedTitle) {
                 document.title = savedTitle;
@@ -366,14 +366,27 @@
                 document.getElementById('header-input').value = savedHeader;
             }
 
-            if (savedLogo) {
-                document.getElementById('preview-img').src = savedLogo;
+            if (savedFavicon) {
+                document.getElementById('preview-img').src = savedFavicon;
                 document.getElementById('logo-preview').style.display = 'block';
-                
-                // Set favicon
-                const favicon = document.getElementById('favicon');
-                favicon.href = savedLogo;
+                updateFavicon(savedFavicon);
             }
+        }
+
+        // Function to update favicon
+        function updateFavicon(dataUrl) {
+            // Remove existing favicon
+            let link = document.querySelector("link[rel*='icon']");
+            if (link) {
+                link.parentNode.removeChild(link);
+            }
+            
+            // Create new favicon
+            link = document.createElement('link');
+            link.type = 'image/x-icon';
+            link.rel = 'icon';
+            link.href = dataUrl;
+            document.getElementsByTagName('head')[0].appendChild(link);
         }
 
         // Apply settings
@@ -403,8 +416,7 @@
                     document.getElementById('logo-preview').style.display = 'block';
                     
                     // Update favicon
-                    const favicon = document.getElementById('favicon');
-                    favicon.href = dataUrl;
+                    updateFavicon(dataUrl);
                     
                     // Save to localStorage
                     localStorage.setItem('logoImage', dataUrl);
