@@ -191,8 +191,8 @@
     </div>
 
     <script>
-        // Launch in about:blank on first load
-        if (window.location.href !== 'about:blank' && !window.opener) {
+        // Launch in about:blank on first load (only if not already in about:blank or iframe)
+        if (window.location.href !== 'about:blank' && !window.opener && window.self === window.top) {
             const currentPage = window.location.href;
             const blankWindow = window.open('about:blank', '_blank');
             blankWindow.document.write(`
