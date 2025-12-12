@@ -105,7 +105,14 @@
             margin-bottom: 20px;
         }
 
+        .link-item {
+            display: flex;
+            gap: 10px;
+            align-items: stretch;
+        }
+
         .link-button {
+            flex: 1;
             display: block;
             padding: 18px;
             background: white;
@@ -129,6 +136,30 @@
 
         .link-button:active {
             transform: translateY(0);
+        }
+
+        .github-button {
+            padding: 18px 20px;
+            background: #24292e;
+            border: 2px solid #24292e;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .github-button:hover {
+            background: #0366d6;
+            border-color: #0366d6;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(3, 102, 214, 0.3);
         }
 
         .footer {
@@ -180,42 +211,78 @@
         <a href="https://html-loader.lovable.app/" target="_blank" class="loader-link">📂 File Loader Tool</a>
 
         <div class="links">
-            <a href="#" class="link-button" onclick="openResource('Hacked/DragonXLite.html'); return false;">
-                Version 2024.1
-            </a>
-            <a href="#" class="link-button" onclick="openResource('Hacked/DragonX_V2_International.html'); return false;">
-                Version 2024.2
-            </a>
-            <a href="#" class="link-button" onclick="openResource('Hacked/DragonX.html'); return false;">
-                Version 2023.8
-            </a>
-            <a href="#" class="link-button" onclick="openResource('Hacked/Justin 1.2.4.html'); return false;">
-                Version 2023.12
-            </a>
-            <a href="#" class="link-button" onclick="openResource('Hacked/NitClient 2.0.html'); return false;">
-                Version 2024.3
-            </a>
-            <a href="#" class="link-button" onclick="openResource('Hacked/PremiumDragonv2.html'); return false;">
-                Version 2024.4
-            </a>
-            <a href="#" class="link-button" onclick="openResource('Hacked/UwUClient v1 Full.html'); return false;">
-                Version 2023.10
-            </a>
-            <a href="#" class="link-button" onclick="openResource('Hacked/dragonXv3.html'); return false;">
-                Version 2024.5
-            </a>
-            <a href="#" class="link-button" onclick="openResource('Hacked/nit-client.html'); return false;">
-                Version 2023.9
-            </a>
-            <a href="#" class="link-button" onclick="openResource('Hacked/pi-client.html'); return false;">
-                Version 2023.11
-            </a>
-            <a href="#" class="link-button" onclick="openResource('Legit/Eagler-Reborn.html'); return false;">
-                Version 2024.6
-            </a>
-            <a href="#" class="link-button" onclick="openResource('Legit/shadowclient3.0beta.html'); return false;">
-                Version 2024.7
-            </a>
+            <div class="link-item">
+                <a href="#" class="link-button" onclick="openResource('Hacked/DragonXLite.html'); return false;">
+                    Dragon X Lite
+                </a>
+                <a href="https://github.com/The-cmd-explorer/eaglebobster/blob/main/Clients/Hacked/DragonXLite.html" target="_blank" class="github-button">⚡</a>
+            </div>
+            <div class="link-item">
+                <a href="#" class="link-button" onclick="openResource('Hacked/DragonX_V2_International.html'); return false;">
+                    Dragon X V2
+                </a>
+                <a href="https://github.com/The-cmd-explorer/eaglebobster/blob/main/Clients/Hacked/DragonX_V2_International.html" target="_blank" class="github-button">⚡</a>
+            </div>
+            <div class="link-item">
+                <a href="#" class="link-button" onclick="openResource('Hacked/DragonX.html'); return false;">
+                    Dragon X
+                </a>
+                <a href="https://github.com/The-cmd-explorer/eaglebobster/blob/main/Clients/Hacked/DragonX.html" target="_blank" class="github-button">⚡</a>
+            </div>
+            <div class="link-item">
+                <a href="#" class="link-button" onclick="openResource('Hacked/Justin 1.2.4.html'); return false;">
+                    Justin 1.2.4
+                </a>
+                <a href="https://github.com/The-cmd-explorer/eaglebobster/blob/main/Clients/Hacked/Justin 1.2.4.html" target="_blank" class="github-button">⚡</a>
+            </div>
+            <div class="link-item">
+                <a href="#" class="link-button" onclick="openResource('Hacked/NitClient 2.0.html'); return false;">
+                    Nit 2.0
+                </a>
+                <a href="https://github.com/The-cmd-explorer/eaglebobster/blob/main/Clients/Hacked/NitClient 2.0.html" target="_blank" class="github-button">⚡</a>
+            </div>
+            <div class="link-item">
+                <a href="#" class="link-button" onclick="openResource('Hacked/PremiumDragonv2.html'); return false;">
+                    Premium Dragon V2
+                </a>
+                <a href="https://github.com/The-cmd-explorer/eaglebobster/blob/main/Clients/Hacked/PremiumDragonv2.html" target="_blank" class="github-button">⚡</a>
+            </div>
+            <div class="link-item">
+                <a href="#" class="link-button" onclick="openResource('Hacked/UwUClient v1 Full.html'); return false;">
+                    UwU V1
+                </a>
+                <a href="https://github.com/The-cmd-explorer/eaglebobster/blob/main/Clients/Hacked/UwUClient v1 Full.html" target="_blank" class="github-button">⚡</a>
+            </div>
+            <div class="link-item">
+                <a href="#" class="link-button" onclick="openResource('Hacked/dragonXv3.html'); return false;">
+                    Dragon X V3
+                </a>
+                <a href="https://github.com/The-cmd-explorer/eaglebobster/blob/main/Clients/Hacked/dragonXv3.html" target="_blank" class="github-button">⚡</a>
+            </div>
+            <div class="link-item">
+                <a href="#" class="link-button" onclick="openResource('Hacked/nit-client.html'); return false;">
+                    Nit
+                </a>
+                <a href="https://github.com/The-cmd-explorer/eaglebobster/blob/main/Clients/Hacked/nit-client.html" target="_blank" class="github-button">⚡</a>
+            </div>
+            <div class="link-item">
+                <a href="#" class="link-button" onclick="openResource('Hacked/pi-client.html'); return false;">
+                    Pi
+                </a>
+                <a href="https://github.com/The-cmd-explorer/eaglebobster/blob/main/Clients/Hacked/pi-client.html" target="_blank" class="github-button">⚡</a>
+            </div>
+            <div class="link-item">
+                <a href="#" class="link-button" onclick="openResource('Legit/Eagler-Reborn.html'); return false;">
+                    Eagler Reborn
+                </a>
+                <a href="https://github.com/The-cmd-explorer/eaglebobster/blob/main/Clients/Legit/Eagler-Reborn.html" target="_blank" class="github-button">⚡</a>
+            </div>
+            <div class="link-item">
+                <a href="#" class="link-button" onclick="openResource('Legit/shadowclient3.0beta.html'); return false;">
+                    Shadow 3.0 Beta
+                </a>
+                <a href="https://github.com/The-cmd-explorer/eaglebobster/blob/main/Clients/Legit/shadowclient3.0beta.html" target="_blank" class="github-button">⚡</a>
+            </div>
         </div>
 
         <div class="footer">
